@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,22 +12,30 @@ import Protocols from "@/pages/protocols";
 import Achievements from "@/pages/achievements";
 import DataAnalysis from "@/pages/data-analysis";
 
+// Determine the base path from the import.meta.env (vite) or use an empty string
+const basePath = typeof import.meta.env.BASE_URL === 'string' 
+  ? import.meta.env.BASE_URL.replace(/\/$/, '')
+  : '';
+
+// Create router with hash-based routing for GitHub Pages compatibility
 function Router() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/community" component={Community} />
-          <Route path="/protocols" component={Protocols} />
-          <Route path="/achievements" component={Achievements} />
-          <Route path="/data-analysis" component={DataAnalysis} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
-    </div>
+    <WouterRouter base={basePath}>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/community" component={Community} />
+            <Route path="/protocols" component={Protocols} />
+            <Route path="/achievements" component={Achievements} />
+            <Route path="/data-analysis" component={DataAnalysis} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </WouterRouter>
   );
 }
 
