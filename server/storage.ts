@@ -142,7 +142,7 @@ export class DatabaseStorage implements IStorage {
       .select()
       .from(protocolCheckIns)
       .where(eq(protocolCheckIns.protocolId, protocolId))
-      .orderBy(desc(protocolCheckIns.createdAt));
+      .orderBy(desc(protocolCheckIns.checkInDate));
   }
 
   async createBiometric(insertBiometric: InsertBiometric): Promise<Biometric> {
@@ -180,7 +180,7 @@ export class DatabaseStorage implements IStorage {
       .select()
       .from(achievements)
       .where(eq(achievements.userId, userId))
-      .orderBy(desc(achievements.unlockedAt));
+      .orderBy(desc(achievements.completedAt));
   }
 
   async createAchievement(insertAchievement: InsertAchievement): Promise<Achievement> {
