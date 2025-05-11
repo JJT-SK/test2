@@ -820,13 +820,7 @@ var vite_config_default = defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "client", "index.html"),
-        fallback: path.resolve(import.meta.dirname, "client", "404.html")
-      }
-    }
+    emptyOutDir: true
   },
   base: "/HomeHubDashboard/",
   // Ensure the correct base path
