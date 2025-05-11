@@ -1,0 +1,108 @@
+Page 1: Home Dashboard
+The Home Dashboard is organized into a central element surrounded by four distinct sections. Here’s the layout in a structured way:
+
+Central Element (Center of the Page):
+Biohack Score (Large, Center-Aligned): Displays a numerical value representing the user's health or optimization status.
+Check-In Button (Below the Biohack Score): Allows users to update their current state.
+Four Surrounding Sections (Positioned around the central element):
+Top Left: Data Analytics Section:
+Contains bar charts and pie charts displaying biometric and protocol data.
+Top Right: Forum Dashboard Section:
+Shows trending posts or recent discussions from the community.
+Bottom Left: Achievements & Progress Section:
+Graphs and statistics representing user milestones and achievements.
+Bottom Right: Current Protocols Section:
+List of active or ongoing biohacking protocols.
+Layout Style:
+
+Central circular element with surrounding rectangular sections.
+Grid layout (2x2) around the center, with even spacing.
+Page 2: Community Forum
+The Community Forum page has a vertical structure with sections stacked from top to bottom.
+
+Header (Top of the Page):
+Category Filters (Horizontal Row):
+Three categories (Cat 1, Cat 2, Cat 3) represented as buttons or tabs.
+Filter Button (Right-Aligned):
+Dropdown or modal to filter posts by various criteria.
+Main Content (Below Header):
+Trending Posts Section (Full-Width):
+Displays a list of the most active or relevant discussions.
+Post Cards (Stacked Vertically):
+Each card contains:
+Post title and brief description.
+Upvote/Downvote buttons.
+Tags (e.g., Protocol, Data).
+Visual elements like graphs or images (if applicable).
+Comment button.
+Post Details (Below Post Cards):
+Detailed View of Selected Post (Full-Width):
+Shows full post content, user comments, and community interactions.
+Layout Style:
+
+Vertical stack with clear section divisions.
+Expandable post cards for in-depth views.
+Page 3: Protocol Builder
+The Protocol Builder page is structured for ease of creating and managing biohacking protocols.
+
+Header (Top of the Page):
+Search Bar (Center-Aligned): To find specific protocols.
+Add New Protocol Button (Right-Aligned): Initiates protocol creation.
+Main Protocol Display (Below Header):
+Protocol Blocks (Grid, 2x2 or Horizontal Scroll):
+Each block represents a prebuilt or custom protocol.
+Buttons inside each block: Edit, View, and Delete.
+Protocol Timeline (Bottom of the Page):
+Horizontal Scrollable Row:
+Displays steps or stages of the protocol.
+Includes progress indicators and outcome summaries.
+Layout Style:
+
+Header with search and add buttons.
+Protocol blocks displayed in a grid.
+Horizontal timeline for tracking progress.
+Page 4: Achievements & Progress
+This page tracks the user’s progress and displays achievements.
+
+Header (Top of the Page):
+User Profile (Left-Aligned):
+User image, name, and progress bar.
+Rank Icon (Right-Aligned):
+Shows current user rank or status.
+Main Content (Below Header):
+Achievements Section (Top Half):
+Grid of cards showing completed protocols, community involvement, and consistency streaks.
+Progress Graphs (Bottom Half):
+Line and bar charts representing progress over time.
+Tabs or buttons to switch between metrics (e.g., sleep improvement, cognitive enhancement).
+Layout Style:
+
+Header with profile and rank.
+Two main areas: achievements (top) and progress graphs (bottom).
+Page 5: Data Analysis
+This page is focused on visualizing data and deriving insights.
+
+Header (Top of the Page):
+Category Tabs (Horizontal, Left-Aligned):
+Three categories (Cat 1, Cat 2, Cat 3) for filtering data.
+Chat Bot (Right-Aligned):
+Icon or button to initiate data analysis queries.
+Main Data Display (Below Header):
+Selected Protocol Details (Top Half):
+Displays current protocol name and related stats.
+Graphs and Charts (Bottom Half):
+Left Graph: Line graph for tracking progress over time.
+Right Graph: Bar chart comparing different metrics.
+Analysis Summary (Below Charts):
+Text-based insights derived from the data visualizations.
+Layout Style:
+
+Split into top data selection and bottom data visualization.
+Two adjacent graphs for comparative analysis.
+General UI/UX Guidelines:
+Consistent Navigation Bar: Persistent across all pages with quick links to Home, Community, Protocols, Achievements, and Data Analysis.
+Theme and Aesthetic: Clean, minimalist with a focus on data presentation. Use clear typography and interactive visual elements.
+Interactive Elements:
+Buttons with hover effects.
+Real-time updates for data charts and leaderboards.
+Interactive data points on graphs (click to view more details).
