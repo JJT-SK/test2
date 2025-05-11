@@ -11,7 +11,9 @@ import {
  * Creates a default user and sample data in the database
  */
 async function seed() {
-  console.log("Seeding database with initial data...");
+  console.log("\n=========================================");
+  console.log("🌱 SEEDING DATABASE WITH INITIAL DATA");
+  console.log("=========================================");
   
   try {
     // Check if we already have a default user
