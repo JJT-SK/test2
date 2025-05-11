@@ -36,19 +36,23 @@ const BiohackScore = () => {
       <h2 className="text-xl font-semibold text-dark mb-6">Biohack Score</h2>
       
       <div className="relative mb-8">
-        <div className="w-48 h-48 rounded-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg">
+        <div className="w-48 h-48 rounded-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg animate-pulse-slow">
           <div className="w-44 h-44 rounded-full bg-white flex items-center justify-center">
             <div className="text-center">
-              <span className="block text-5xl font-bold text-dark">{biohackScore}</span>
+              <span className="block text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text text-transparent">{biohackScore}</span>
               <span className="text-dark-light text-sm">out of 100</span>
             </div>
           </div>
         </div>
         
         {/* Progress indicators */}
-        <div className="absolute top-0 right-0 bg-green-100 rounded-full h-6 w-6 border-4 border-white shadow-sm flex items-center justify-center">
+        <div className="absolute top-0 right-0 bg-green-100 rounded-full h-8 w-8 border-4 border-white shadow-sm flex items-center justify-center">
           <FaArrowUp className="text-xs text-green-600" />
         </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute -bottom-2 -left-2 bg-blue-100 rounded-full h-6 w-6 border-2 border-white"></div>
+        <div className="absolute top-1/2 -right-3 bg-purple-100 rounded-full h-4 w-4 border-2 border-white"></div>
       </div>
       
       <div className="text-center mb-8">
