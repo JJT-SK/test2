@@ -4,7 +4,9 @@ import { FaCheck } from "react-icons/fa";
 import { Protocol } from "@shared/schema";
 
 const ProtocolItem = ({ protocol, onCheckIn }: { protocol: Protocol, onCheckIn: (id: number) => void }) => {
-  const progress = (protocol.currentDay / protocol.duration) * 100;
+  const currentDay = protocol.currentDay ?? 0;
+  const duration = protocol.duration ?? 1;
+  const progress = (currentDay / duration) * 100;
   
   return (
     <div className="p-3 border border-gray-100 rounded-lg">
@@ -53,8 +55,9 @@ const CurrentProtocolsCard = () => {
   const { protocols, isLoading, checkInProtocol, createProtocol } = useProtocols();
 
   const handleAddProtocol = () => {
-    // Redirect to protocols page
-    window.location.href = "/protocols";
+    // Use client navigation instead of direct window.location
+    window.history.pushState({}, "", "/protocols");
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (
