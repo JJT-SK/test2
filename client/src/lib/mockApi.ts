@@ -248,15 +248,22 @@ export const mockApi = {
     }
   }): Promise<{ message: string; biometric: Biometric }> => {
     const newId = biometrics.length + 1;
+    // Convert undefined to null for the biometric fields
+    const sleepQuality = data.biometrics.sleepQuality !== undefined ? data.biometrics.sleepQuality : null;
+    const energyLevel = data.biometrics.energyLevel !== undefined ? data.biometrics.energyLevel : null;
+    const stressLevel = data.biometrics.stressLevel !== undefined ? data.biometrics.stressLevel : null;
+    const focusLevel = data.biometrics.focusLevel !== undefined ? data.biometrics.focusLevel : null;
+    const moodLevel = data.biometrics.moodLevel !== undefined ? data.biometrics.moodLevel : null;
+    
     const newBiometric: Biometric = {
       id: newId,
       userId: data.userId,
       date: new Date(),
-      sleepQuality: data.biometrics.sleepQuality,
-      energyLevel: data.biometrics.energyLevel,
-      stressLevel: data.biometrics.stressLevel,
-      focusLevel: data.biometrics.focusLevel,
-      moodLevel: data.biometrics.moodLevel,
+      sleepQuality,
+      energyLevel,
+      stressLevel,
+      focusLevel,
+      moodLevel,
       notes: ""
     };
     
@@ -264,7 +271,7 @@ export const mockApi = {
     
     // Update user
     defaultUser.lastCheckIn = new Date();
-    defaultUser.currentStreak += 1;
+    defaultUser.currentStreak = (defaultUser.currentStreak ?? 0) + 1;
     
     // Calculate new biohack score based on recent biometrics
     const recentMetrics = biometrics.slice(0, 7);

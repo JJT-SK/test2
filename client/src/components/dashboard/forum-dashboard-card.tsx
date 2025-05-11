@@ -7,8 +7,9 @@ const ForumDashboardCard = () => {
   const { forumPosts, isLoading, createPost } = useForum();
 
   const handleCreatePost = () => {
-    // Redirect to community page or show dialog
-    window.location.href = "/community";
+    // Use client navigation instead of direct window.location
+    window.history.pushState({}, "", "/community");
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (
@@ -40,7 +41,9 @@ const ForumDashboardCard = () => {
                   <span className="text-xs text-dark-light">by @user{post.userId}</span>
                   <span className="mx-2 text-dark-light">•</span>
                   <span className="text-xs text-dark-light">
-                    {formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}
+                    {typeof post.createdAt === 'string' || post.createdAt instanceof Date 
+                      ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
+                      : 'recently'}
                   </span>
                 </div>
               </div>
