@@ -26,24 +26,34 @@ const Home = () => {
         <p className="text-dark-light">Welcome back, John. Here's your biohacking progress.</p>
       </div>
       
-      {/* Dashboard Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column */}
-        <div className="space-y-6">
+      {/* Dashboard Grid - Center element with 4 surrounding sections */}
+      <div className="grid md:grid-cols-2 gap-6 relative">
+        {/* Top Row */}
+        <div className="md:col-span-1">
           <DataAnalyticsCard />
+        </div>
+        <div className="md:col-span-1">
+          <ForumDashboardCard />
+        </div>
+        
+        {/* Center element - spans across middle */}
+        <div className="md:col-span-2 flex justify-center items-center my-4">
+          <div className="w-full max-w-md">
+            <BiohackScore />
+          </div>
+        </div>
+        
+        {/* Bottom Row */}
+        <div className="md:col-span-1">
           <AchievementsCard />
         </div>
-        
-        {/* Center Column - Biohack Score */}
-        <div className="space-y-6 central-score">
-          <BiohackScore />
-          <DailyTipsCard />
+        <div className="md:col-span-1">
+          <CurrentProtocolsCard />
         </div>
         
-        {/* Right Column */}
-        <div className="space-y-6">
-          <ForumDashboardCard />
-          <CurrentProtocolsCard />
+        {/* Daily Tips - below everything */}
+        <div className="md:col-span-2 mt-6">
+          <DailyTipsCard />
         </div>
       </div>
     </div>
