@@ -822,8 +822,20 @@ var vite_config_default = defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true
   },
-  base: "/HomeHubDashboard/"
-  // Replace <repo-name> with your actual GitHub repo name
+  base: "/HomeHubDashboard/",
+  server: {
+    host: true
+  },
+  // Handle SPA routing on GitHub Pages
+  optimizeDeps: {
+    include: ["react", "react-dom"]
+  },
+  // Fix for SPA routing on GitHub Pages
+  esbuild: {
+    define: {
+      global: "window"
+    }
+  }
 });
 
 // server/vite.ts
