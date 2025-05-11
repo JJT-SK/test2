@@ -18,6 +18,7 @@ const Navbar = () => {
     { path: "/data-analysis", label: "Data Analysis", icon: <FaChartLine /> },
   ];
 
+  // Fixed the DOM nesting warning - don't use <a> elements inside <Link>
   return (
     <nav className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,14 +33,14 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <a className={`px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-1 ${
+                <div className={`px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-1 cursor-pointer ${
                   location === item.path 
                     ? "text-primary border-b-2 border-primary" 
                     : "text-dark-medium hover:text-primary"
                 }`}>
                   {item.icon}
                   <span>{item.label}</span>
-                </a>
+                </div>
               </Link>
             ))}
           </div>
@@ -69,14 +70,14 @@ const Navbar = () => {
         <div className="px-2 space-y-1">
           {navItems.map((item) => (
             <Link key={item.path} href={item.path}>
-              <a className={`w-full flex items-center px-3 py-2 font-medium rounded-md ${
+              <div className={`w-full flex items-center px-3 py-2 font-medium rounded-md cursor-pointer ${
                 location === item.path
                   ? "text-primary bg-blue-50"
                   : "text-dark-medium hover:bg-light"
               }`}>
                 <span className="w-5 mr-2">{item.icon}</span>
                 <span>{item.label}</span>
-              </a>
+              </div>
             </Link>
           ))}
         </div>
