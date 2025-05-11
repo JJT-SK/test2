@@ -820,17 +820,22 @@ var vite_config_default = defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(import.meta.dirname, "client", "index.html"),
+        fallback: path.resolve(import.meta.dirname, "client", "404.html")
+      }
+    }
   },
   base: "/HomeHubDashboard/",
+  // Ensure the correct base path
   server: {
     host: true
   },
-  // Handle SPA routing on GitHub Pages
   optimizeDeps: {
     include: ["react", "react-dom"]
   },
-  // Fix for SPA routing on GitHub Pages
   esbuild: {
     define: {
       global: "window"
