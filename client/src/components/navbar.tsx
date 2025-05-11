@@ -48,6 +48,11 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="ml-3 relative hidden md:block">
               <div className="flex items-center space-x-3">
+                <Link href="/auth">
+                  <div className="px-3 py-2 rounded-md text-sm font-medium flex items-center cursor-pointer text-dark-medium hover:text-primary">
+                    <span>About BioHacker</span>
+                  </div>
+                </Link>
                 <button className="bg-light p-1 rounded-full text-gray-400 hover:text-primary">
                   <FaBell className="text-lg" />
                 </button>
@@ -80,6 +85,12 @@ const Navbar = () => {
               </div>
             </Link>
           ))}
+          <Link href="/auth">
+            <div className="w-full flex items-center px-3 py-2 font-medium rounded-md cursor-pointer text-dark-medium hover:bg-light">
+              <span className="w-5 mr-2">📄</span>
+              <span>About BioHacker</span>
+            </div>
+          </Link>
         </div>
       </div>
     </nav>

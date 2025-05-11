@@ -20,17 +20,14 @@ const basePath = typeof import.meta.env.BASE_URL === 'string'
 
 // Create router with hash-based routing for GitHub Pages compatibility
 function Router() {
-  const [location] = useLocation();
-  const showNavAndFooter = location !== "/" && location !== "";
-  
   return (
     <WouterRouter base={basePath}>
       <div className="min-h-screen flex flex-col">
-        {showNavAndFooter && <Navbar />}
+        <Navbar />
         <main className="flex-1">
           <Switch>
-            <Route path="/" component={Landing} />
-            <Route path="/home" component={Home} />
+            <Route path="/" component={Home} />
+            <Route path="/auth" component={Landing} />
             <Route path="/community" component={Community} />
             <Route path="/protocols" component={Protocols} />
             <Route path="/achievements" component={Achievements} />
@@ -38,7 +35,7 @@ function Router() {
             <Route component={NotFound} />
           </Switch>
         </main>
-        {showNavAndFooter && <Footer />}
+        <Footer />
       </div>
     </WouterRouter>
   );

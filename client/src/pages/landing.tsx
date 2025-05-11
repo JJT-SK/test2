@@ -21,10 +21,10 @@ const Landing = () => {
               <a href="#faq" className="text-sm font-medium text-gray-500 hover:text-gray-900">FAQ</a>
             </nav>
             <div className="flex items-center space-x-4">
-              <Link to="/home">
+              <Link to="/">
                 <Button variant="ghost" className="text-sm">Sign In</Button>
               </Link>
-              <Link to="/home">
+              <Link to="/">
                 <Button className="text-sm bg-black hover:bg-gray-800 text-white rounded-full">Get Started</Button>
               </Link>
             </div>
@@ -57,7 +57,7 @@ const Landing = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
             className="mt-10"
           >
-            <Link to="/home">
+            <Link to="/">
               <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-6 text-base">
                 Try BioHacker Now
               </Button>
@@ -211,7 +211,7 @@ const Landing = () => {
           <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl p-10 md:p-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to optimize your life?</h2>
             <p className="text-xl text-blue-50 mb-10 max-w-2xl mx-auto">Join thousands of biohackers who have taken control of their health and performance.</p>
-            <Link to="/home">
+            <Link to="/">
               <Button className="bg-white hover:bg-gray-100 text-gray-900 rounded-full px-8 py-6 text-base shadow-lg">
                 Get Started for Free
               </Button>
